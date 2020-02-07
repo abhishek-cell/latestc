@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KoolApplicationMain</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/css/menu.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" media="all" />
+        <link rel="stylesheet" href="~/css/site.css" media="all" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/menu.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </environment>
+</head>
+<body>
+    <div class="topnav">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" style="font-family:'Comic Sans MS';font-size:large">Red Hocks.</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-area="" asp-controller="Home" asp-action="EachProductDetails">ProductList</a>
+        <a asp-area="" asp-controller="Home" asp-action="ProductDetail">Category</a>
+        <div class="search-container">
+            <form id="labnol" asp-area="" method="post" asp-controller="Home" asp-action="Search">
+                <div class="search box">
+                    <i class="fa fa-microphone" onclick="startDictation()"></i>
+                    <button data-toggle="modal" data-target="#imagesearch"><i class="fa fa-camera" style="font-size:15px"></i></button>
+                    <input class="input-sm" type="text" name="search" id="transcript" placeholder="Search for products..." required />
+                    <button type="submit"><i class="fa fa-search"></i></i></button>
+
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="modal fade" id="imagesearch" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &#9747;
+                    </button>
+                    <h4 class="modal-title">Image Search</h4>
+                </div>
+                <div class="modal-body">
+                    <form asp-area="" method="post" asp-controller="home" asp-action="imageSearch" enctype="multipart/form-data">
+                        <input type="file" name="imagefile" />
+                        <input type="submit" value ="Upload" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    @*<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>*@
+
+    
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Product Category
+                    </a>
+                </li>
+                <li>
+                    <a href="#"> Tshirt</a>
+                </li>
+                <li>
+                    <a href="#">Jeans</a>
+                </li>
+                <li>
+                    <a href="#">Jacket</a>
+                </li>
+                <li>
+                    <a href="#">Shoes</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- Page Content -->
+
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2019 - KoolApplicationMain</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/menu.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/menu.js" asp-append-version="true"></script>
+    </environment>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#transcript").autocomplete({
+                source: 'api/rest/search'
+
+            });
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

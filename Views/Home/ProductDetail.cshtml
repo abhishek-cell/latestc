@@ -1,0 +1,197 @@
+﻿@model IEnumerable<KoolApplicationMain.Models.Product>
+
+@{
+    ViewData["Title"] = "ProductDetail";
+}
+<link href="~/css/Index.css" rel="stylesheet" />
+<link href="~/css/bootstrap-min-css-1.css" rel="stylesheet" />
+<link href="~/css/bootstrap.css" rel="stylesheet" />
+<script src="~/js/bootstrap.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<section class="cat_product_area section_padding">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/images/bannermain.jpg" alt="ASP.NET" class="img-responsive" />
+
+            </div>
+            <div class="item">
+                <img src="~/images/bannermain2.jpg" alt="Visual Studio" class="img-responsive" />
+
+            </div>
+            <div class="item">
+                <img src="~/images/bannermain4.jpg" alt="Microsoft Azure" class="img-responsive" />
+
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="left_sidebar_area">
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Browse Categories</h3>
+                        </div>
+                            <div class="widgets_inner">
+                                <ul class="list">
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Womens athletic wear">
+                                            Womens athletic wear
+                                        </a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Mens athletic wear">Mens athletic wear</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Mens tshirts">Mens tshirts</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Girls shirts or blouses">Girls shirts or blouses</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Disposable work coat">Disposable work coat</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Mens waistcoats">Mens waistcoats</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Womens suits">Womens suits</a>
+                                        <span>(250)</span>
+                                    </li>
+                                    <li>
+                                        <a asp-area="" asp-controller="Home" asp-action="Type" asp-route-type="Mens suits">Mens suits</a>
+                                        <span>(250)</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                    </aside>
+
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Brand filters</h3>
+                        </div>
+                        <div class="widgets_inner" >
+                            <ul class="list">
+                                <li>
+                                    <a  asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="Reflex">Reflex</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="MLANM">MLANM</a>
+                                </li>
+                                <li class="active">
+                                    <a asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="Gildan">Gildan</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="IWOLLENCE">IWOLLENCE</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="Workforce">Workforce</a>
+                                </li>
+                            </ul>
+                            <ul class="list">
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="MUSHARE">MUSHARE</a>
+                                </li>
+                                <li class="active">
+                                    <a asp-area="" asp-controller="Home" asp-action="Brands" asp-route-brand="REACTION Kenneth Cole">REACTION Kenneth Cole</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <aside class="left_widgets p_filter_widgets">
+                        <div class="l_w_title">
+                            <h3>Color Filter</h3>
+                        </div>
+                        <div class="widgets_inner">
+                            <ul class="list">
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Black">Black</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Green">Green</a>
+                                </li>
+                                <li class="active">
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Maroon">Maroon</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Blue">Blue</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Gray">Gray</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="White">White</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Red">Red</a>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Home" asp-action="Color" asp-route-color="Wine Red">Wine Red</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product_top_bar d-flex justify-content-between align-items-center">
+                            <div class="single_product_menu">
+                                <p><span>10000 </span> Prodict Found</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div class="row align-items-center latest_product_inner">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item">
+
+                                <img src="~/images/@(item.ItemNumber).jpg" style="overflow: hidden; position: relative; width:200px; height:200px;" alt="">
+                                <div class="single_product_text">
+                                    <h4>@item.Description</h4>
+                                    <h3>@item.Price</h3>
+                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
