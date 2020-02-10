@@ -208,7 +208,7 @@ namespace KoolApplicationMain.Controllers
                 }
                 else
                 {
-                    return View("ProductDetail", imgresult);
+                    return View("EachProductDetails", imgresult);
                 }
             }
             return View("Index");
