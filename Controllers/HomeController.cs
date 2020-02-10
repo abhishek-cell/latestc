@@ -179,9 +179,9 @@ namespace KoolApplicationMain.Controllers
                         results = visualRecognition.Classify(
                             imagesFile: ms,
                             imagesFilename: imagefile.FileName,
-                            owners: new List<string>()
+                            classifierIds: new List<string>()
                             {
-                                "Clothing"
+                                "Clothing_702622846"
                             }
                             );
                     }
