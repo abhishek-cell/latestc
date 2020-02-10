@@ -181,7 +181,7 @@ namespace KoolApplicationMain.Controllers
                             imagesFilename: imagefile.FileName,
                             classifierIds: new List<string>()
                             {
-                                "Clothing_702622846"
+                                "Clothing_1683159806"
                             }
                             );
                     }
