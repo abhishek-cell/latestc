@@ -166,10 +166,10 @@ namespace KoolApplicationMain.Controllers
                 await imagefile.CopyToAsync(filestream);
                 filestream.Close();
                 IamAuthenticator authenticator = new IamAuthenticator(
-        apikey: "9qgeef7jn__HEuNYblTDxq4eAlbifXYTMBj1b4PGDw7X"
+        apikey: "zti--OqZ99hqMLVD-V8SqcuH1hbcfESY38QJf19p5bxP"
         );
                 VisualRecognitionService visualRecognition = new VisualRecognitionService("2018-03-19", authenticator);
-                visualRecognition.SetServiceUrl("https://api.us-south.visual-recognition.watson.cloud.ibm.com/instances/2d9c4e1b-6a3a-47f5-808a-2144e02dce84");
+                visualRecognition.SetServiceUrl("https://api.us-south.visual-recognition.watson.cloud.ibm.com/instances/8a4fc5e2-4af4-461f-9bba-378ea1ba9bef");
                 DetailedResponse<ClassifiedImages> results;
                 using (FileStream fs = System.IO.File.OpenRead(imageSave))
                 {
@@ -178,7 +178,11 @@ namespace KoolApplicationMain.Controllers
                         fs.CopyTo(ms);
                         results = visualRecognition.Classify(
                             imagesFile: ms,
-                            imagesFilename: imagefile.FileName
+                            imagesFilename: imagefile.FileName,
+                            owners: new List<string>()
+                            {
+                                "Clothing"
+                            }
                             );
                     }
                 }
